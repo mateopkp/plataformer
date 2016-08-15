@@ -61,7 +61,43 @@ jumpspeed = 7 ;
 
 //obtener las entradas de teclado 
 
-key_rigth = keyboard_check(vk_right);
+key_right = keyboard_check(vk_right);
+key_left = keyboard_check(vk_left);
+key_space =  keyboard_check_pressed(vk_space);
+
+//operaciones con las entradas del teclado
+move= key_right  - key_left;
+hsp = move * movespeed;
+//colision horizontal
+if(place_meeting(x+hsp,y,obj_block))
+  {
+  while(!place_meeting(x+sign(hsp),y,obj_block)) 
+      {
+       x += sign(hsp);
+       }
+       hsp = 0
+  
+  }
+// colision vertical
+if(place_meeting(x,y+vsp,obj_block))
+  {
+  while(!place_meeting(x,y+sign(vsp),obj_block)) 
+      {
+       y += sign(vsp);
+       }
+       vsp = 0
+  
+  }
+
+
+x += hsp;
+if(vsp&lt;10){vsp += grav;}
+
+if(place_meeting(x,y+1,obj_block))
+ {
+ vsp = key_space * -jumpspeed;
+ }
+y += vsp
 </string>
           </argument>
         </arguments>
