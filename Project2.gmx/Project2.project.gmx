@@ -8,12 +8,17 @@
   <sprites name="sprites">
     <sprite>sprites\spr_block</sprite>
     <sprite>sprites\spr_ball</sprite>
+    <sprite>sprites\spr_powerup</sprite>
+    <sprite>sprites\sprite3</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\background0</background>
+  </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
     <object>objects\obj_block</object>
     <object>objects\obj_ball</object>
+    <object>objects\obj_powerup</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
